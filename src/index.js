@@ -23,7 +23,7 @@ export default {
           'Authorization': 'Bearer '+env.API_KEY,
         },
         method: "POST",
-        body: JSON.stringify(json_msg)
+        body: JSON.stringify(req)
     })
     .then(res => res.json())
     .then(data => {
