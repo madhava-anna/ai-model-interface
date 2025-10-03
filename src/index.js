@@ -25,7 +25,7 @@ export default {
         method: "POST",
         body: JSON.stringify(json_msg)
     })
-    .then(response => response.json())
+    .then(res => res.json())
     .then(data => {
         console.log(data);
         response = new Response(JSON.stringify(data), {
