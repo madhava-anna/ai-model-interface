@@ -9,9 +9,9 @@ export default {
     async function handleRequest(request) {
     	const req = await request.json();
 		console.log("Request: "+JSON.stringify(req)); 
-		console.log("Request: "+env.API_KEY);
+		console.log("Key: "+env.API_KEY);
     	let response;
-		fetch("https://api.cloudflare.com/client/v4/accounts/65bdc6858b8bb12769049814c5ae57d6/ai/run/@cf/google/gemma-3-12b-it",
+		await fetch("https://api.cloudflare.com/client/v4/accounts/65bdc6858b8bb12769049814c5ae57d6/ai/run/@cf/google/gemma-3-12b-it",
     	{
         headers: {
           'Accept': 'application/json',
