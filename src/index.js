@@ -30,11 +30,10 @@ export default {
 		
 	    response.headers.set("Access-Control-Allow-Origin", "*");
 		response.headers.append("Vary", "Origin");
-		return response; 
     })
     .catch(function(res){ console.log(res) })
 	
-
+	return response; 
       
     }
 
