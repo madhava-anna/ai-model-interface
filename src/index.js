@@ -23,24 +23,19 @@ export default {
     })
     .then(res => res.json())
     .then(data => {
-        console.log(data);
+        console.log("Got Response from AI "+JSON.stringify(data));
         response = new Response(JSON.stringify(data), {
           headers: { "Content-Type": "application/json" },
         });
-		console.log("Got Response from AI");
-	      // Set CORS headers
-		  const url = new URL(request.url);	
-	      response.headers.set("Access-Control-Allow-Origin", "*");
-	
-	      // Append to/Add Vary header so browser will cache response correctly
-	      response.headers.append("Vary", "Origin");
-		return response;
-        
+		
+	    response.headers.set("Access-Control-Allow-Origin", "*");
+		response.headers.append("Vary", "Origin");
+		return response; 
     })
     .catch(function(res){ console.log(res) })
 	
 
-      return response;
+      
     }
 
     async function handleOptions(request) {
