@@ -12,7 +12,7 @@ export default {
     async function handleRequest(request) {
       
 		const resend = new Resend(env.API_KEY);
-		console.log("Request: "+request);   
+		console.log("Request: "+JSON.stringify(request));   
 		const req = await request.json();
     let response;
 		fetch("https://api.cloudflare.com/client/v4/accounts/65bdc6858b8bb12769049814c5ae57d6/ai/run/@cf/google/gemma-3-12b-it",
